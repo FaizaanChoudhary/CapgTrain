@@ -7,9 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.capg.dao.IBookingDAO;
 import com.capg.entities.Booking;
-import com.capg.entities.Users;
 import com.capg.exception.BookingNotFoundException;
-import com.capg.exception.UserNotFoundException;
 
 @Service
 public class BookingServiceImpl implements IBookingService {
@@ -22,9 +20,7 @@ public class BookingServiceImpl implements IBookingService {
 		Booking booking1;
 		if (bookingDAO.findById(bookingId).isEmpty()) {
             throw new BookingNotFoundException();
-        } else {
-        	booking1 = bookingDAO.findById(bookingId).get();
-        }
+        } 
 		return bookingDAO.getOne(bookingId);
 	}
 

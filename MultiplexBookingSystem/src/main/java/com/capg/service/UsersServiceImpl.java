@@ -18,9 +18,7 @@ public class UsersServiceImpl implements IUsersService{
 		Users user1;
 		if (usersDAO.findById(userId).isEmpty()) {
             throw new UserNotFoundException();
-        } else {
-             user1 = usersDAO.findById(userId).get();
-        }
+        } 
 		return usersDAO.getOne(userId);
 	}
 

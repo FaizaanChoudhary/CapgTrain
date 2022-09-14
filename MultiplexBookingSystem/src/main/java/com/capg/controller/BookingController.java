@@ -1,8 +1,6 @@
 package com.capg.controller;
 
 import java.util.List;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capg.entities.Booking;
-import com.capg.entities.Users;
 import com.capg.exception.BookingNotFoundException;
-import com.capg.exception.UserNotFoundException;
 import com.capg.service.IBookingService;
 
 @RestController
@@ -29,7 +25,7 @@ public class BookingController {
 	IBookingService service;
 	@GetMapping("/bookings")
 	List<Booking> getBookings(){
-		  System.out.println("fetching booking records");
+		  System.out.println("Fetching booking records");
 	        return this.service.getBookings();
 	}
 	@GetMapping("/bookingbyid/{bookingId}")
