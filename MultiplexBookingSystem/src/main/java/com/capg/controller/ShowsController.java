@@ -24,21 +24,21 @@ public class ShowsController {
 		  System.out.println("fetching show records");
 	        return this.service.getShows();
 	}
-	@GetMapping("/shows/{showId}")
+	@GetMapping("/showbyid/{showId}")
 	public Shows getShowById (@PathVariable int showId) {
 		return this.service.getShowById(showId);
 	}
-	@PostMapping("/shows")
+	@PostMapping("/addshow")
 	public Shows addShow(@RequestBody Shows show) {
 		  return this.service.addShow(show);
 	}
 	
-	@PutMapping("/shows")
+	@PutMapping("/updateshow")
 	public Shows updateShow(@RequestBody Shows show) {
 		  return this.service.updateShow(show);
 	}
 	
-	@DeleteMapping("/shows/{showId}")
+	@DeleteMapping("/deleteshow/{showId}")
 	 public ResponseEntity<HttpStatus> deleteShow(@PathVariable int showId){
 		try {
 	         this.service.deleteShow(showId);

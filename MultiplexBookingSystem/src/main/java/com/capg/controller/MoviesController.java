@@ -25,21 +25,21 @@ public class MoviesController {
 		  System.out.println("fetching movie records");
 	        return this.service.getMovies();
 	}
-	@GetMapping("/movies/{movieId}")
+	@GetMapping("/moviebyid/{movieId}")
 	public Movies getMovieById (@PathVariable int movieId) {
 		return this.service.getMovieById(movieId);
 	}
-	@PostMapping("/movies")
+	@PostMapping("/addmovie")
 	public Movies addMovie(@RequestBody Movies movie) {
 		  return this.service.addMovie(movie);
 	}
 	
-	@PutMapping("/movies")
+	@PutMapping("/updatemovie")
 	public Movies updateBooking(@RequestBody Movies movie) {
 		  return this.service.updateMovie(movie);
 	}
 	
-	@DeleteMapping("/movies/{movieId}")
+	@DeleteMapping("/deletemovie/{movieId}")
 	 public ResponseEntity<HttpStatus> deleteMovie(@PathVariable int movieId){
 		try {
 	         this.service.deleteMovie(movieId);

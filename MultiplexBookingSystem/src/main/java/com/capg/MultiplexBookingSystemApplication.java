@@ -10,7 +10,7 @@ public class MultiplexBookingSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MultiplexBookingSystemApplication.class, args);
-		System.out.println("Hello");
+		System.out.println("Multiplex Booking System Started");
 	}
 
 }

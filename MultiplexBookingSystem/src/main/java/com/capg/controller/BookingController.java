@@ -27,27 +27,27 @@ public class BookingController {
 	@Autowired
 	
 	IBookingService service;
-	@GetMapping("/booking")
+	@GetMapping("/bookings")
 	List<Booking> getBookings(){
 		  System.out.println("fetching booking records");
 	        return this.service.getBookings();
 	}
-	@GetMapping("/booking/{bookingId}")
+	@GetMapping("/bookingbyid/{bookingId}")
 	public ResponseEntity getBookingById(@PathVariable("bookingId") int bookingId) throws BookingNotFoundException {
 		 return new ResponseEntity(service.getBookingById(bookingId), HttpStatus.OK);
     }
 	
-	@PostMapping("/booking")
+	@PostMapping("/addbooking")
 	public Booking addBooking(@RequestBody Booking booking) {
 		  return this.service.addBooking(booking);
 	}
 	
-	@PutMapping("/booking")
+	@PutMapping("/updatebooking")
 	public Booking updateBooking(@RequestBody Booking booking) {
 		  return this.service.updateBooking(booking);
 	}
 	
-	@DeleteMapping("/booking/{bookingId}")
+	@DeleteMapping("/deletebooking/{bookingId}")
 	 public ResponseEntity<HttpStatus> deleteBooking(@PathVariable int bookingId){
 		try {
 	         this.service.deleteBooking(bookingId);

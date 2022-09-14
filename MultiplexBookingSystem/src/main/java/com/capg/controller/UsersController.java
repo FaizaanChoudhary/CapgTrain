@@ -33,24 +33,24 @@ public class UsersController {
 	public List<String> names(){
 	return  this.servicedao.names();
 	}
-	@GetMapping("/users/{userId}")
+	@GetMapping("/userbyid/{userId}")
 	public ResponseEntity getUserByID(@PathVariable("userId") int userId) throws UserNotFoundException {
         return new ResponseEntity(service.getUserById(userId), HttpStatus.OK);
     }
 //	public Users getUserById (@PathVariable int userId) {
 //		return this.service.getUserById(userId);
 //	}
-	@PostMapping("/users")
+	@PostMapping("/adduser")
 	public Users addUser(@RequestBody Users user) {
 		  return this.service.addUser(user);
 	}
 	
-	@PutMapping("/users")
+	@PutMapping("/updateuser")
 	public Users updateUser(@RequestBody Users user) {
 		  return this.service.updateUser(user);
 	}
 	
-	@DeleteMapping("/users/{userId}")
+	@DeleteMapping("/deleteusers/{userId}")
 	 public ResponseEntity<HttpStatus> deleteUser(@PathVariable int userId){
 		try {
 	         this.service.deleteUser(userId);
